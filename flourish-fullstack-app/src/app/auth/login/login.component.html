@@ -1,6 +1,7 @@
+<div class="mt-5">
 <h1 class="text-center mt-5 text-white">Login to Flourish</h1>
 
-<form id="form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+<form id="form" [formGroup]="loginForm" (ngSubmit)="onLogin()" style="margin: 0 auto; max-width: 30%">
   <p>
     Flourish and let your potential bloom!.
   </p>
@@ -33,5 +34,12 @@
       />
     </div>
   </div>
-  <button type="submit" class="btn btn-default text-white">Login</button>
+
+  <div class="text-center mb-3 mt-5">
+    <button type="submit" class="btn btn-primary">Login</button>
+  </div>
+  <div class="text-center mb-3">
+    <p class="text-center">Don't have an account? <a>Signup</a></p>
+  </div>
 </form>
+</div>

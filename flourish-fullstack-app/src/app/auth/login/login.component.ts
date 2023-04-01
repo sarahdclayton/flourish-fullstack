@@ -9,6 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
+    username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
@@ -18,6 +19,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   onLogin(){
-    this.authService.login(this.loginForm.value);
+    this.authService.login(this.loginForm.value).subscribe((res:any)=>{
+      console.log(res)
+    })
   }
 }
