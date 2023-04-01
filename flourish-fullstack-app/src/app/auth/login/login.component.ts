@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,15 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
 
-  constructor(private authService:AuthService) {}
+  constructor(private authService:AuthService, private userService:UserService) {}
 
   ngOnInit(): void {}
 
   onLogin(){
     this.authService.login(this.loginForm.value).subscribe((res:any)=>{
-      console.log(res)
+      if(res.success){
+        this.userService.setCurrentUser(res.payload.user)
+      }
     })
   }
 }
