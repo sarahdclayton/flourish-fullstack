@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,13 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     LoginComponent,
     SignupComponent,
     NavbarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
