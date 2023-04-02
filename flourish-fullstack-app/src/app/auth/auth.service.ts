@@ -36,6 +36,22 @@ export class AuthService {
     })
   }
 
+  logout(){
+    const token = this.getToken();
+
+    this.http.delete("http://localhost:3000/api/v1/users/logout", {
+      headers: {
+        Authorization: `Bearer ${token.value}`
+      }
+    }).subscribe((res:any)=>{
+      if(res.success){
+        this.removeToken();
+        this.userService.setCurrentUser(null);
+        this.route.navigate(['/logout']);
+      }
+    })
+  }
+
   signup(user){
     return this.http.post("http://localhost:3000/api/v1/users/create", user)
   }
