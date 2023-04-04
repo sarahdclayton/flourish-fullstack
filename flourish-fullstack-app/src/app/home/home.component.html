@@ -4,11 +4,12 @@
     <a href="" class="p-2 link-secondary" *ngFor="let category of categories">{{category.name}}</a>
   </nav>
   <!-- Featured blog -->
-  <div class="bg-dark text-white p-4 p-md-5 rounded mb-4" *ngIf="suggestedBlogs.length > 0">
+  <div class="bg-dark text-white p-4 p-md-5 rounded mb-4" *ngIf="suggestedBlogs[0]">
     <h1 class="fst-italic">{{suggestedBlogs[0].title}}</h1>
     <p class="my-3">{{suggestedBlogs[0].sub_title}}</p>
     <p class="lead mb-0">
-      <a href="" class="link-secondary">Continue Reading</a>
+      <!-- <a routerLink="/blogs/{{blog.id}}" class="link-secondary">Continue Reading</a> -->
+      <a routerLink="/blogs/{{suggestedBlogs[0].id}}" class="link-secondary">Continue Reading</a>
     </p>
   </div>
   <!-- blog cards -->
@@ -29,12 +30,12 @@
           <div class="card-text mb-auto">{{blog.sub_title}}</div>
           <!-- continue reading link -->
           <p>
-            <a href="" class="link-secondary"></a>
+            <a routerLink="/blogs/{{blog.id}}" class="link-secondary">Continue Reading</a>
           </p>
         </div>
         <div class="col-auto d-none d-lg-block">
           <!-- image -->
-          <img scr="{{blog.image_path}}" style="object-fit:cover" width="200px" height="200px" alt="" >
+          <img src="{{blog.image_path}}" style="object-fit:cover" width="200px" height="200px" alt="" >
         </div>
       </div>
     </div>
