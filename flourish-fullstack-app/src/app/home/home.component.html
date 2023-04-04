@@ -1,14 +1,12 @@
 <main>
   <!-- categories list -->
   <nav class="nav justify-content-between">
-    <a href="" class="p-2 link-secondary">Categories</a>
-    <a href="" class="p-2 link-secondary">Categories</a>
-    <a href="" class="p-2 link-secondary">Categories</a>
+    <a href="" class="p-2 link-secondary" *ngFor="let category of categories">{{category.name}}</a>
   </nav>
   <!-- Featured blog -->
-  <div class="bg-dark text-white p-4 p-md-5 rounded mb-4">
-    <h1 class="fst-italic">Featured Blog</h1>
-    <p class="my-3">Sub-Title</p>
+  <div class="bg-dark text-white p-4 p-md-5 rounded mb-4" *ngIf="suggestedBlogs.length > 0">
+    <h1 class="fst-italic">{{suggestedBlogs[0].title}}</h1>
+    <p class="my-3">{{suggestedBlogs[0].sub_title}}</p>
     <p class="lead mb-0">
       <a href="" class="link-secondary">Continue Reading</a>
     </p>
@@ -16,21 +14,19 @@
   <!-- blog cards -->
   <div class="row">
     <!-- blog card -->
-    <div class="col-md-6">
+    <div class="col-md-6 shadow-sm mb-4 rounded" *ngFor="let blog of suggestedBlogs.slice(1)">
       <div class="row">
         <div class="col">
           <!-- blog categories -->
           <div>
-            <strong class="d-line-block md-2 text-primary ms-2">Category Name</strong>
-            <strong class="d-line-block md-2 text-primary ms-2">Category Name</strong>
-            <strong class="d-line-block md-2 text-primary ms-2">Category Name</strong>
+            <strong class="d-line-block md-2 text-primary ms-2" *ngFor="let category of blog.categories">{{category.name}}</strong>
           </div>
           <!-- title -->
-          <h3>Blog Title</h3>
+          <h3>{{blog.title}}</h3>
           <!-- date -->
-          <div class="mb-1 text-muted">Date</div>
+          <div class="mb-1 text-muted">{{blog.created_at}}</div>
           <!-- sub-title -->
-          <div class="card-text mb-auto">Sub-Title</div>
+          <div class="card-text mb-auto">{{blog.sub_title}}</div>
           <!-- continue reading link -->
           <p>
             <a href="" class="link-secondary"></a>
@@ -38,7 +34,7 @@
         </div>
         <div class="col-auto d-none d-lg-block">
           <!-- image -->
-          <img scr="https://rb.gy/gj4w" width="200px" height="200px" alt="" >
+          <img scr="{{blog.image_path}}" style="object-fit:cover" width="200px" height="200px" alt="" >
         </div>
       </div>
     </div>
