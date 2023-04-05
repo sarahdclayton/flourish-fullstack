@@ -1,1 +1,19 @@
-<p>blog-detail works!</p>
+<!-- header -->
+<header ngIf="blog" style="background-image: url('{{blog.image_path}}')">
+  <div class="text-center text-white position-relative">
+    <h1>{{blog.title}}</h1>
+  <h2>{{blog.sub_title}}</h2>
+  <div>
+    <span ngFor="let category of categories" class="badge bg-primary mx-2">{{category.name}}</span>
+  </div>
+  <div class="my-3">
+    <span>Posted by {{creator.username}}</span>
+  </div>
+  </div>
+</header>
+ <!-- blog content -->
+ <article *ngIf="blog">
+  <div>
+    <p>{{blog.content}}</p>
+  </div>
+ </article>

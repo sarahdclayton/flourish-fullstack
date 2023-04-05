@@ -11,6 +11,7 @@ export class BlogDetailComponent implements OnInit {
   blog: any = null;
   categories: any = null;
   creator: any = null;
+category: any;
 
   constructor(private activatedRoute:ActivatedRoute, private blogService:BlogService) { }
 
@@ -19,9 +20,10 @@ export class BlogDetailComponent implements OnInit {
       const blogId = params.id;
       this.blogService.fetchBlog(blogId).subscribe({
         next: (res:any)=>{
+          console.log(res);
           this.blog = res.payload.blog;
           this.categories = res.payload.blog.categories;
-          this.creator = res.payload.blog.creator;
+          this.creator = res.payload.blog.user;
         }
       })
     })

@@ -16,6 +16,6 @@ export class BlogService {
   }
 
   fetchBlog(id:number){
-    return this.http.get(`${URL}/blogs/id`)
+    return this.http.get(`${URL}/blogs/${id}`)
   }
 }
