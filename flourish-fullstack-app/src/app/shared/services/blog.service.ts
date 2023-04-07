@@ -12,7 +12,7 @@ export class BlogService {
   constructor(private http:HttpClient) { }
 
   fetchBlogs(){
-    return this.http.get(`$(URL}/blogs/home`)
+    return this.http.get(`${URL}/blogs/home`)
   }
 
   fetchBlog(id:number){
