@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Flourish</a>
+  <a class="navbar-brand" routerLink="/home">Flourish</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,13 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
       <li class="nav-item" *ngIf="!currentUser">
-        <a class="nav-link" href="#">Login</a>
+        <a class="nav-link" routerLink="/login">Login</a>
       </li>
       <li class="nav-item" *ngIf="!currentUser">
-        <a class="nav-link" href="#">Signup</a>
+        <a class="nav-link" routerLink="/signup">Signup</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Dropdown User
         </a>
         <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -21,8 +21,8 @@
         </ul> -->
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="currentUser">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item">Action</a>
+          <a class="dropdown-item">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" (click)="onLogout()">Logout</a>
         </div>

@@ -10,7 +10,7 @@ import { BlogService } from '../shared/services/blog.service';
 export class BlogDetailComponent implements OnInit {
   blog: any = null;
   categories: any = null;
-  creator: any = null;
+  user: any = null;
   category: any = null;
 
 
@@ -27,7 +27,7 @@ export class BlogDetailComponent implements OnInit {
             this.categories = this.blog.categories;
           }
           // this.categories = res.payload.blog.categories;
-          this.creator = blog.user;
+          this.user = blog.user;
         }
       })
     })
