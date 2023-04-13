@@ -12,16 +12,19 @@
       <li class="nav-item" *ngIf="!currentUser">
         <a class="nav-link" routerLink="/signup">Signup</a>
       </li>
+      <li class="nav-item" *ngIf="currentUser">
+        <a class="nav-link">Welcome {{currentUser.username}}</a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown User
+          Profile
         </a>
         <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li><a class="dropdown-item" href="#">Logout</a></li>
         </ul> -->
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="currentUser">
-          <a class="dropdown-item">Action</a>
+          <a class="dropdown-item" routerLink="/profile/{{currentUser.username}}">My Profile</a>
           <a class="dropdown-item">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" (click)="onLogout()">Logout</a>

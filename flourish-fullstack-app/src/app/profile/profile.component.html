@@ -1,1 +1,25 @@
-<p>profile works!</p>
+<!-- header -->
+<header *ngIf="profileUser" style="background-image: url('{{profileBlogs[0].image_path}}');">
+  <div class="position-relative text-center text-white">
+    <h2>{{profileBlogs[0].title}}</h2>
+    <span>{{profileBlogs[0].sub_title}}</span>
+  </div>
+</header>
+
+<h1 *ngIf="profileUser">{{profileUser.username}}</h1>
+
+<!-- list of blogs -->
+<div class="text-center my-5" *ngIf="profileUser" class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+      <div *ngFor="let blog of profileBlogs">
+        <div class="post-preview">
+          <h2>{{blog.title}}</h2>
+          <h3>{{blog.sub_title}}</h3>
+          <p>Posted by on April 13, 2023</p>
+        </div>
+        <hr class="my-4" />
+      </div>
+    </div>
+  </div>
+</div>
