@@ -1,8 +1,9 @@
 <!-- header -->
 <header *ngIf="profileUser" style="background-image: url('{{profileBlogs[0].image_path}}');">
-  <div class="position-relative text-center text-white">
-    <h2>{{profileBlogs[0].title}}</h2>
-    <span>{{profileBlogs[0].sub_title}}</span>
+  <div class="position-relative">
+    <h2 class="text-white text-center">{{profileBlogs[0].title}}</h2>
+    <h3 class="text-white text-center">{{profileBlogs[0].sub_title}}</h3>
+    <app-create-blog *ngIf="currentUser && currentUser.username === profileUser.username"></app-create-blog>
   </div>
 </header>
 

@@ -1,58 +1,112 @@
-<div class="mt-5">
-
-</div>
-<h1 class="text-center mb-2">Sign Me Up!</h1>
-<form style="margin: 0 auto; max-width: 70%" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-  <div class="row">
-
-    <div class="col-6">
-      <div class="mb-3">
-        <label for="first_name" class="form-label">First Name</label>
-        <input type="text" id="first_name" class="form-control" formControlName="first_name">
-      </div>
-    </div>
-
-    <div class="col-6">
-      <div class="mb-3">
-        <label for="last_name" class="form-label">Last Name</label>
-        <input type="text" id="last_name" class="form-control" formControlName="last_name">
-      </div>
-    </div>
-
-      <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" id="username" class="form-control" formControlName="username">
-      </div>
-
-      <div class="mb-3">
-        <label for="phone" class="form-label">Phone Number</label>
-        <input type="text" id="phone" class="form-control" formControlName="phone">
-      </div>
-
-      <div class="mb-3">
-        <label for="password" class="form-label">Create Password</label>
-        <input type="password" id="password" class="form-control" formControlName="password">
-      </div>
-
-      <div class="mb-3">
-        <label for="password_confirmation" class="form-label">Password Confirmation</label>
-        <input type="password" id="password_confirmation" class="form-control" formControlName="password_confirmation">
-      </div>
-
-    <div class="mb-3">
-      <label for="email" class="form-label">Email Address</label>
-      <input type="email" id="email" class="form-control" formControlName="email">
-    </div>
-
-    <div class="mb-3">
-      <p>We'll never share your email with anyone else</p>
-    </div>
-
-    <div class="text-center">
-      <button class="btn btn-primary" type="submit">Sign Up</button>
+<div class="container-fluid mt-5">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+      <a href="http://localhost:3000/api/v1/blogs" class="logo-link">
+        <img
+          width="200"
+          style="float: none"
+          src="assets/images/4.png"
+          alt="Flourish"
+        />
+      </a>
     </div>
     <div>
-      <p class="text-center">Already have an account? <a>Login</a></p>
+      <h1 class="text-center mb-4 mt-4">Sign Me Up!</h1>
+      <form
+        style="margin: 0 auto; max-width: 70%"
+        [formGroup]="signupForm"
+        (ngSubmit)="onSubmit()"
+        class="p-4 bg-light rounded"
+      >
+        <div class="row">
+          <div class="col-6">
+            <div class="mb-3">
+              <label for="first_name" class="form-label">First Name</label>
+              <input
+                type="text"
+                id="first_name"
+                class="form-control"
+                formControlName="first_name"
+              />
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="mb-3">
+              <label for="last_name" class="form-label">Last Name</label>
+              <input
+                type="text"
+                id="last_name"
+                class="form-control"
+                formControlName="last_name"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              formControlName="username"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input
+              type="text"
+              id="phone"
+              class="form-control"
+              formControlName="phone"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Create Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="password_confirmation" class="form-label"
+              >Password Confirmation</label
+            >
+            <input
+              type="password"
+              id="password_confirmation"
+              class="form-control"
+              formControlName="password_confirmation"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              formControlName="email"
+            />
+          </div>
+
+          <div class="mb-3">
+            <p>We'll never share your email with anyone else</p>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+          </div>
+          <div>
+            <p class="text-center">Already have an account? <a>Login</a></p>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
-</form>
+</div>
