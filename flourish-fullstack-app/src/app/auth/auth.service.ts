@@ -2,13 +2,19 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from './user.service';
+import { BlogService } from '../shared/services/blog.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient, private route:Router, private userService:UserService) { }
+  constructor(
+    private http: HttpClient,
+    private route:Router,
+    private userService:UserService,
+    private blogService:BlogService
+  ) { }
 
   login(user) {
     return this.http.post('http://localhost:3000/api/v1/users/login', user);
@@ -28,7 +34,8 @@ export class AuthService {
       }
     }).subscribe((res:any)=>{
       if(res.success){
-        this.userService.setCurrentUser(res.payload.user)
+        this.userService.setCurrentUser(res.payload.user);
+        this.blogService.setBlogs(res.payload.user.blogs);
         console.log(res)
         // navigate to home
         // this.route.navigate(['/home'])

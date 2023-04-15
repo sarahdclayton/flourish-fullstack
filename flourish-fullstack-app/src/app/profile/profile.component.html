@@ -13,7 +13,7 @@
 <div class="text-center my-5" *ngIf="profileUser" class="container">
   <div class="row">
     <div class="col-md-10 col-lg-8 col-xl-7">
-      <div *ngFor="let blog of profileBlogs">
+      <div style="cursor: pointer" *ngFor="let blog of profileBlogs" routerLink="/blogs/{{blog.id}}">
         <div class="post-preview">
           <h2>{{blog.title}}</h2>
           <h3>{{blog.sub_title}}</h3>

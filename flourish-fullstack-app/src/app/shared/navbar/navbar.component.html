@@ -22,7 +22,7 @@
         <a class="nav-link" routerLink="/signup">Signup</a>
       </li>
       <li class="nav-item" *ngIf="currentUser">
-        <a class="nav-link">Welcome {{ currentUser.username }}</a>
+        <a class="nav-link" *ngIf="currentUser">Welcome {{ currentUser.username }}</a>
       </li>
       <li class="nav-item dropdown">
         <a
@@ -45,7 +45,7 @@
         >
           <a
             class="dropdown-item"
-            routerLink="/profile/{{ currentUser.username }}"
+            routerLink="/profile/{{ currentUser.username }}" *ngIf="currentUser"
             >My Profile</a
           >
           <a class="dropdown-item">Another action</a>
