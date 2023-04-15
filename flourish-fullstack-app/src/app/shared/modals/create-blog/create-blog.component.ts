@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-create-blog',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-blog.component.css']
 })
 export class CreateBlogComponent implements OnInit {
+  categories: any = []
 
-  constructor() { }
+  constructor(private categoryService:CategoryService) { }
 
   ngOnInit(): void {
+    this.categoryService.fetchCategories().subscribe({
+      next: (res:any)=> {
+        console.log("CATEGORIES RESPONSE", res)
+        this.categories = res.payload.categories 
+      }
+    })
   }
 
 }
