@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateBlogComponent } from './shared/modals/create-blog/create-blog.component';
+import { EditBlogComponent } from './shared/modals/edit-blog/edit-blog.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CreateBlogComponent } from './shared/modals/create-blog/create-blog.com
     BlogDetailComponent,
     ProfileComponent,
     CreateBlogComponent,
+    EditBlogComponent,
   ],
   imports: [
     BrowserModule,
