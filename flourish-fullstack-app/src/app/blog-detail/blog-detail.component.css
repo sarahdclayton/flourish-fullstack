@@ -13,5 +13,26 @@ header::before {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 50% 
+  opacity: 50%
+}
+
+h1 {
+  font-family: 'Lato';
+  font-size: 50px;
+}
+
+h2 {
+  font-family: 'Lato';
+  font-size: 35px;
+
+}
+
+span {
+  font-family: 'Merriweather';
+  font-size: 20px;
+}
+
+p {
+  font-family: 'Merriweather';
+  font-size: 20px;
 }

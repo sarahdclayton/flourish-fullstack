@@ -1,0 +1,18 @@
+label, p {
+  font-family: 'Merriweather';
+  font-size: large;
+}
+
+input {
+  font-family: 'Merriweather';
+  font-style:normal
+}
+
+h6{
+  font-family: 'Lato';
+}
+
+button {
+  font-family: 'Lato';
+  font-weight: bold;
+}

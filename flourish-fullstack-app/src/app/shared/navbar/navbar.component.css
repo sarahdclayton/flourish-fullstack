@@ -5,3 +5,8 @@ nav {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
 }
+ a {
+  font-family: 'Lato';
+  font-size: x-large;
+  font-weight: bold;
+ }
